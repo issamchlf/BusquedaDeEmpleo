@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use function Laravel\Prompts\table;
-
-class Journal extends Model
+class Application extends Model
 {
     use HasFactory;
     protected $fillable = [
         "job title",
+        "Category",
         "status",
     ];
-    protected $table = "journal";
 }
+
