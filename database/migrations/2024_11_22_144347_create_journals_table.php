@@ -11,8 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('job_helpers', function (Blueprint $table) {
+        Schema::create('journals', function (Blueprint $table) {
             $table->id();
+            $table->text("job title");
+            $table->text("status");
             $table->timestamps();
         });
     }
@@ -22,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('job_helpers');
+        Schema::dropIfExists('journals');
     }
 };
