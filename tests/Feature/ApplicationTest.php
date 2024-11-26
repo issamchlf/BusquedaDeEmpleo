@@ -16,9 +16,12 @@ class ApplicationTest extends TestCase
     public function test_ListOfEntryCanBeRead()
     {
         $this->withoutExceptionHandling();
+
         Application::all();
+
         $response = $this->get('/');
+
         $response->assertStatus(200)
-            ->assertViews('home');
+            ->assertViewIs('home');
     }
 }

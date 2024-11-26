@@ -13,9 +13,9 @@ class ApplicationController extends Controller
      */
     public function index()
     {
-        $Applications = Application::all();
+        $applications = Application::all();
 
-        return response()->json($Applications, 200);
+        return response()->json($applications, 200);
     }
 
     /**
@@ -31,14 +31,14 @@ class ApplicationController extends Controller
      */
     public function store(Request $request)
     {
-        $Application = Application::create([
+        $application = Application::create([
             'job title' => $request->JobTitle,
             'Status' => $request->status,
             'category'=> $request->category
         ]);
 
-        $Application->save();
-        return response()->json($$application, 200);
+        $application->save();
+        return response()->json($application, 200);
     }
 
     /**
