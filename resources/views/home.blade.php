@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-<div class="mx-auto max-w-screen-lg px-4 py-8 sm:px-8">
-    <div class="flex items-center justify-between pb-6">
+<div class="overflow-y-auto rounded-lg border max-h-96">
+    <div class="overflow-x-auto">
         <div>
             <h2 class="font-semibold text-gray-700">Job Applications</h2>
             <span class="text-xs text-gray-500">List of all applied jobs</span>
