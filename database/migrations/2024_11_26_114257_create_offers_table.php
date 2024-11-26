@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('offers', function (Blueprint $table) {
             $table->id();
-            $table->varchar();
-            $table->varchar();
+            $table->varchar("company name");
+            $table->varchar("location");
+            $table->text("comment");
+            $table->bigint("salary");
             $table->timestamps();
         });
     }
