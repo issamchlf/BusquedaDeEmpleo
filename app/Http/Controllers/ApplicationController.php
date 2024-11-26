@@ -16,7 +16,7 @@ class ApplicationController extends Controller
         return view('home',compact('applications'));
     
     }
-}
+
 
     /**
      * Show the form for creating a new resource.
@@ -39,7 +39,8 @@ class ApplicationController extends Controller
      */
     /*public function show(string $id)
     {
-        //
+        $application = Application::find($id);
+        return view('show', compact('application'));
     }
 
     /**
@@ -62,4 +63,4 @@ class ApplicationController extends Controller
      * Remove the specified resource from storage.
    /*  */
    
-
+}

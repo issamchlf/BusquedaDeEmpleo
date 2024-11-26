@@ -9,8 +9,8 @@ class Application extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "job title",
-        "Category",
+        'job_title',
+        "category",
         "status",
     ];
 }

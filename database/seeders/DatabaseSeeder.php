@@ -23,17 +23,17 @@ class DatabaseSeeder extends Seeder
             //'email' => 'test@example.com',
         //]);
         Application::factory()->create([
-            'job title' => 'Acountant',
+            'job_title' => 'Acountant',
             'Category' => 'Buisness',
             'status' => 'Requested',
         ]);
         Application::factory()->create([
-            'job title' => 'Acountant',
+            'job_title' => 'Acountant',
             'Category' => 'Buisness',
             'status' => 'Requested',
         ]);
         Application::factory()->create([
-            'job title' => 'Acountant',
+            'job_title' => 'Acountant',
             'Category' => 'Buisness',
             'status' => 'Requested',
         ]);

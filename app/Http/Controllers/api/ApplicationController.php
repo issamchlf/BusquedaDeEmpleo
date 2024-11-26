@@ -32,7 +32,7 @@ class ApplicationController extends Controller
     public function store(Request $request)
     {
         $application = Application::create([
-            'job title' => $request->JobTitle,
+            'job_title' => $request->job_title,
             'Status' => $request->status,
             'category'=> $request->category
         ]);
@@ -64,7 +64,7 @@ class ApplicationController extends Controller
         $application = Application::find($id);
         
         $application->update([
-            'job title' => $request->JobTitle,
+            'job_title' => $request->job_title,
             'Status' => $request->status,
             'category'=> $request->category
         ]);

@@ -17,7 +17,7 @@ class ApplicationFactory extends Factory
     public function definition(): array
     {
         return [
-            'job title' =>$this->faker->realText($maxNbChars = 200),
+            'job_title' =>$this->faker->realText($maxNbChars = 200),
             'Category' =>$this->faker->realText($maxNbChars = 200),
             'status' =>$this->faker->realText($maxNbChars = 200)
         ];
