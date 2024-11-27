@@ -13,5 +13,6 @@ class Application extends Model
         "category",
         "status",
     ];
+    protected $table = "Applications";
 }
 

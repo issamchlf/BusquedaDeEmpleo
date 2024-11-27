@@ -18,8 +18,8 @@ class ApplicationFactory extends Factory
     {
         return [
             'job_title' =>$this->faker->realText($maxNbChars = 200),
-            'Category' =>$this->faker->realText($maxNbChars = 200),
-            'status' =>$this->faker->realText($maxNbChars = 200)
+            'status' =>$this->faker->realText($maxNbChars = 200),
+            'Category' =>$this->faker->realText($maxNbChars = 200)
         ];
     }
 }

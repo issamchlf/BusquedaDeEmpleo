@@ -31,14 +31,14 @@ class ApplicationController extends Controller
      */
     public function store(Request $request)
     {
-        $application = Application::create([
+        $applications = Application::create([
             'job_title' => $request->job_title,
-            'Status' => $request->status,
+            'status' => $request->status,
             'category'=> $request->category
         ]);
 
-        $application->save();
-        return response()->json($application, 200);
+        $applications->save();
+        return response()->json($applications, 200);
     }
 
     /**
@@ -46,9 +46,9 @@ class ApplicationController extends Controller
      */
     public function show(string $id)
     {
-        $application = Application::find($id);
+        $applications = Application::find($id);
 
-        return response()->json($application, 200);
+        return response()->json($applications, 200);
     }
 
     /**
@@ -61,16 +61,16 @@ class ApplicationController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $application = Application::find($id);
+        $applications = Application::find($id);
         
-        $application->update([
+        $applications->update([
             'job_title' => $request->job_title,
-            'Status' => $request->status,
+            'status' => $request->status,
             'category'=> $request->category
         ]);
 
-        $application->save();
-        return response()->json($application, 200);
+        $applications->save();
+        return response()->json($applications, 200);
     }
 
     /**
@@ -78,9 +78,9 @@ class ApplicationController extends Controller
      */
     public function destroy(string $id)
     {
-        $application = Application::find($id);
+        $applications = Application::find($id);
 
-        $application->delete();
+        $applications->delete();
 
         $message = [
             'message' => 'The record was seccesfully deleted from the journal'
