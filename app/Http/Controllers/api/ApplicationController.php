@@ -83,7 +83,7 @@ class ApplicationController extends Controller
         $applications->delete();
 
         $message = [
-            'message' => 'The record was seccesfully deleted from the journal'
+            'message' => 'The record was seccesfully deleted from the Application'
         ];
         return response()->json($message, 200);
     }

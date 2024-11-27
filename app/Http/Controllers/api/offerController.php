@@ -30,14 +30,14 @@ class offerController extends Controller
      */
     public function store(Request $request)
     {
-        $offer = offer::create([
-            'company_name' => $request->CompanyName,
-            'location' => $request->Location,
-            'comment' => $request->Comment,
-            'salary' => $request->Salary
+        $offers = offer::create([
+            'company_name' => $request->company_name,
+            'location' => $request->location,
+            'comment' => $request->comment,
+            'salary' => $request->salary
         ]);
-        $offer->save();
-        return response()->json($offer, 200);
+        $offers->save();
+        return response()->json($offers, 200);
     }
 
     /**
@@ -45,13 +45,14 @@ class offerController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $offers = offer::find($id);
+        return response()->json($offers, 200);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    /*public function edit(string $id)
     {
         //
     }
@@ -61,7 +62,16 @@ class offerController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $offers = offer::find($id);
+
+        $offers->update([
+            'company_name' => $request->company_name,
+            'location' => $request->location,
+            'comment' => $request->comment,
+            'salary' => $request->salary
+        ]);
+        $offers->save();
+        return response()->json($offers, 200);
     }
 
     /**
@@ -69,6 +79,11 @@ class offerController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $offers = offer::find($id);
+        $offers->delete();
+        $message = [
+            'message' => 'the recorde was seccesfully deleted from the Application'
+        ];
+        return response()->json($message, 200);
     }
 }
