@@ -12,6 +12,7 @@ class offer extends Model
     "company name",
     "location",
     "comment",
-    "salary"
+    "salary",
+    "URL"
     ];
 }
