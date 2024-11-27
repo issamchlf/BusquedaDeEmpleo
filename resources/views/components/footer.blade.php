@@ -6,7 +6,7 @@
                 <span class="logo_name">Contact</span>
             </div>
             <div class="media-icons">
-                <a href="#"><img src="https://i.pinimg.com/550x/f7/99/20/f79920f4cb34986684e29df42ec0cebe.jpg" alt="Media Icon"></a>
+                <a href="#"><img src="" alt="Media Icon"></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 <a href="#"><i class="fab fa-youtube"></i></a>
