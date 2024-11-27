@@ -28,7 +28,7 @@ class ApplicationController extends TestCase
 
         $this->delete(route('apidestroy', $applications->first()->id));
 
-        $this->assertDatabaseCount('application', 1);
+        $this->assertDatabaseCount('applications', 1);
 
         $response  = $this->get(route('apihome'));
 
@@ -39,9 +39,9 @@ class ApplicationController extends TestCase
     public function test_CheckICanCreateAnEntryOnApplicationWithApi()
     {
         $response = $this->post(route('apistore'),[
-            'job title' => 'Test JobTitle',
-            'status' => 'Test Status',
-            'category' => 'Test Categpry'
+            'job_title' => 'Test job_title',
+            'status' => 'Test status',
+            'category' => 'Test category'
         ]);
 
         $response = $this->get(route('apihome'));
@@ -51,13 +51,13 @@ class ApplicationController extends TestCase
     public function test_checkIfCanUpdateAnEntryOnApplicationWithApi()
     {
         $this->post(route('apistore'),[
-            'job title' => 'Test JobTitle',
-            'status' => 'Test Status',
-            'category' => 'Test Category'  
+            'job_title' => 'Test job_title',
+            'status' => 'Test status',
+            'category' => 'Test category'  
         ]);
 
         $data = [
-            'job title' => 'Test JobTitle'
+            'job_title' => 'Test job_title'
         ];
 
         $response = $this->get(route('apihome'));
@@ -68,13 +68,13 @@ class ApplicationController extends TestCase
         $ApplicationId = $response->json()[0]['id'];
 
         $this->put(route('apiupdate', $ApplicationId),[
-            'job title' => 'Test JobTitle Updated',
-            'status' => 'Test Status Updated',
-            'category' => 'Test Category Updated'
+            'job_title' => 'Test job_title Updated',
+            'status' => 'Test status Updated',
+            'category' => 'Test category Updated'
         ]);
 
         $newData = [
-            'job title' => 'Test JobTitle Updated',
+            'job_title' => 'Test job_title Updated',
         ];
 
         $response = $this->get(route('apihome'));
@@ -87,12 +87,12 @@ class ApplicationController extends TestCase
     public function test_CheckIfCanFindAnEntryByIdOnApplicationWithApi()
     {
         $this->post(route('apistore'),[
-            'job title' => 'Test JobTitle',
-            'status' => 'Test Status',
-            'category' => 'Test Category'
+            'job_title' => 'Test job_title',
+            'status' => 'Test status',
+            'category' => 'Test category'
         ]);
         $data = [
-            'job title' => 'Test JobTitle',   
+            'job_title' => 'Test job_title',   
         ];
         $response = $this->get(route('apishow', 1));
         $response->assertStatus(200)
