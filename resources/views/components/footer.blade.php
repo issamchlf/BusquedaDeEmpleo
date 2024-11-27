@@ -6,7 +6,7 @@
                 <span class="logo_name">Contact</span>
             </div>
             <div class="media-icons">
-                <a href="#"><img src="" alt="Media Icon"></a>
+                <a href="#"><img class="logo" src="{{ asset('img/logo github.png') }}" alt="logo Github"></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 <a href="#"><i class="fab fa-youtube"></i></a>

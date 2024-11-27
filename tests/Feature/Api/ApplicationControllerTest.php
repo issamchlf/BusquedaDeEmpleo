@@ -7,7 +7,7 @@ use App\Models\Application;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class ApplicationController extends TestCase
+class ApplicationControllerTest extends TestCase
 {
     /**
      * A basic feature test example.
@@ -24,7 +24,7 @@ class ApplicationController extends TestCase
     }
     public function test_CheckIfCanDeleteAnEntryOnApplicationWithApi(){
 
-        $applications = Application::factrory(2)->create();
+        $applications = Application::factory(2)->create();
 
         $this->delete(route('apidestroy', $applications->first()->id));
 
@@ -92,11 +92,11 @@ class ApplicationController extends TestCase
             'category' => 'Test category'
         ]);
         $data = [
-            'job_title' => 'Test job_title',   
+            'job_title' => 'Test job_title'   
         ];
         $response = $this->get(route('apishow', 1));
         $response->assertStatus(200)
-            ->assertJsonCount(5)
+            ->assertJsonCount(6)
             ->assertJsonFragment($data);
     }
 }
