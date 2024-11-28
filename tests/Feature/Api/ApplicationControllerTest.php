@@ -36,7 +36,7 @@ class ApplicationControllerTest extends TestCase
 
     }
 
-    public function test_CheckICanCreateAnEntryOnApplicationWithApi()
+    public function test_CheckIfCanCreateAnEntryOnApplicationWithApi()
     {
         $response = $this->post(route('apistore'),[
             'job_title' => 'Test job_title',
