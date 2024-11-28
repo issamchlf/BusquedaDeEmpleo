@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\offer;
 use App\Models\Application;
 use Illuminate\Http\Request;
 
@@ -37,10 +38,10 @@ class ApplicationController extends Controller
     /**
      * Display the specified resource.
      */
-    /*public function show(string $id)
+    public function show(string $id)
     {
-        $application = Application::find($id);
-        return view('show', compact('application'));
+        $offer = offer::find($id);
+        return view("show",compact("offer"));
     }
 
     /**

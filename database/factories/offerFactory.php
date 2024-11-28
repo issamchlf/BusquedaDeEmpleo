@@ -17,7 +17,10 @@ class offerFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'company_name' => $this->faker->company,
+            'location' => $this->faker->city,
+            'comment' => $this->faker->sentence(10), 
+            'salary' => $this->faker->numberBetween(30000, 120000),
         ];
     }
 }

@@ -5,6 +5,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\User;
+use App\Models\offer;
 use App\Models\Application;
 use Illuminate\Database\Seeder;
 
@@ -36,6 +37,7 @@ class DatabaseSeeder extends Seeder
             'category' => 'Buisness',
             'status' => 'Requested',
         ]);
+        offer::factory(10)->create();
     }
     
 }
