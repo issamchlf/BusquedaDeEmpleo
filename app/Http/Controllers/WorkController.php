@@ -12,7 +12,9 @@ class WorkController extends Controller
      */
     public function index()
     {
-        //
+        $works = Work::all();
+        return view('home',compact('works'));
+    
     }
 
     /**
@@ -34,9 +36,10 @@ class WorkController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Work $work)
+    /*public function show(Work $work)
     {
-        //
+        $offer = offer::find($id);
+        return view("show",compact("offer"));
     }
 
     /**
