@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\Api\WorkController;
+use App\Http\Controllers\WorkController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApplicationController;
 
 Route::get('/', [WorkController::class, 'index'])->name('home');
-//Route::get('/offer{id}',[WorkController::class, 'show'])->name('/offer.show');
+Route::get('/works{id}',[WorkController::class, 'show'])->name('/work.show');
