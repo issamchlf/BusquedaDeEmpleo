@@ -2,11 +2,12 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\ApplicationController;
+use App\Http\Controllers\Api\WorkController;
 
 
-Route::get('applications', [ApplicationController::class, 'index'])->name('apihome'); 
-Route::get('applications/{id}', [ApplicationController::class, 'show'])->name('apishow'); 
-Route::post('applications', [ApplicationController::class, 'store'])->name('apistore'); 
-Route::put('applications/{id}', [ApplicationController::class, 'update'])->name('apiupdate'); 
-Route::delete('applications/{id}', [ApplicationController::class, 'destroy'])->name('apidestroy'); 
+
+Route::get('works', [WorkController::class, 'index'])->name('apihome'); 
+Route::get('works/{id}', [WorkController::class, 'show'])->name('apishow'); 
+Route::post('works', [WorkController::class, 'store'])->name('apistore'); 
+Route::put('works/{id}', [WorkController::class, 'update'])->name('apiupdate'); 
+Route::delete('works/{id}', [WorkController::class, 'destroy'])->name('apidestroy'); 
