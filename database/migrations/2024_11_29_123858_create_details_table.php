@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('details', function (Blueprint $table) {
             Schema::create('details', function (Blueprint $table) {
                 $table->id(); 
-                $table->intiger('work_id'); 
+                $table->integer('work_id'); 
                 $table->string('company_name'); 
                 $table->string('location'); 
                 $table->text('comment'); 
