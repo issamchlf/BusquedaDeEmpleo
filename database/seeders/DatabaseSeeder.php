@@ -39,7 +39,7 @@ class DatabaseSeeder extends Seeder
             'category' => 'Buisness',
             'status' => 'Requested',
         ]);
-        Detail::factory(10)->create();
+        Work::factory(10)->create();
     }
     
 }

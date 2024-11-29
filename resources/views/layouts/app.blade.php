@@ -9,13 +9,11 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-    <div id="app">
     <x-header></x-header>
     <main>
          @yield('content')
     </main>
     <x-footer></x-footer>
-    </div>
     <script src="{{ asset('js/app.js')}}"></script>
 </body>
 </html>
