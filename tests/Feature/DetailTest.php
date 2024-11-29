@@ -3,25 +3,23 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
-use App\Models\Application;
+use App\Models\Detail;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class ApplicationTest extends TestCase
+class DetailTest extends TestCase
 {
-    use refreshDataBase;
     /**
      * A basic feature test example.
      */
+    use RefreshDatabase;
     public function test_ListOfEntryCanBeRead()
     {
         $this->withoutExceptionHandling();
-
-        Application::all();
-
-        $response = $this->get('/');
+        Detail::all();
+        $response = $this->get(route('offer', 1));
 
         $response->assertStatus(200)
-            ->assertViewIs('home');
+            ->assertViewIs('/offer.show');
     }
 }
