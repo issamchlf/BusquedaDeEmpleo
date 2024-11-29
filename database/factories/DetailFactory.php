@@ -17,14 +17,15 @@ class DetailFactory extends Factory
     public function definition(): array
     {
         return [
-            //'work_id'
-            //'company_name' => $this->faker->varchar(),
-            //'location' => $this->faker->varchar(),
-            //'comment' => $this->faker->realText(10), 
-            //'salary' => $this->faker->numberBetween(30000, 120000),
-            //'URL' => $this->faker->;
-         
-
+           'work_id' => $this->faker->unique()->numberBetween(1, 10000), 
+            'company_name' => $this->faker->company, 
+            'location' => $this->faker->city, 
+            'comment' => $this->faker->sentence(10), 
+            'salary' => $this->faker->numberBetween(30000, 150000), 
+            'URL' => $this->faker->url,
+            'created_at' => $this->faker->dateTimeBetween('-1 year', 'now'), 
+            'updated_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
         ];
+        
     }
 }
