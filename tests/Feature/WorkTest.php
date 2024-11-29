@@ -9,10 +9,11 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class WorkTest extends TestCase
 {
+    use refreshDatabase;
     /**
      * A basic feature test example.
      */
-    public function test_ListOfEntryCanBeRead()
+    public function test_ListOfWorkEntryCanBeRead()
     {
         $this->withoutExceptionHandling();
 
