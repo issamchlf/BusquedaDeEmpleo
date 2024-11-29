@@ -12,7 +12,6 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('details', function (Blueprint $table) {
-            Schema::create('details', function (Blueprint $table) {
                 $table->id(); 
                 $table->integer('work_id'); 
                 $table->string('company_name'); 
@@ -21,7 +20,6 @@ return new class extends Migration
                 $table->bigInteger('salary'); 
                 $table->string('URL'); 
                 $table->timestamps(); 
-            });
             
         });
     }
