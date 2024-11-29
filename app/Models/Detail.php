@@ -6,5 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Detail extends Model
 {
-    //
+    "work_id",
+    "company name",
+    "location",
+    "comment",
+    "salary",
+    "URL"
 }

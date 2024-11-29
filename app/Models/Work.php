@@ -9,11 +9,8 @@ class Work extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "work_id",
-        "company name",
-        "location",
-        "comment",
-        "salary",
-        "URL"
+        "job_title",
+        "category",
+        "status",
     ];
 }
