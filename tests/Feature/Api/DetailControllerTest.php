@@ -3,34 +3,34 @@
 namespace Tests\Feature\Api;
 
 use Tests\TestCase;
-use App\Models\offer;
+use App\Models\Detail;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class offerControllerTest extends TestCase
+class DetailControllerTest extends TestCase
 {
     /**
      * A basic feature test example.
      */
-    public function test_CheckICanCreateAnEntryOnOfferWithApi(){
-        offer::factory(2)->create();
+    public function test_CheckICanCreateAnEntryOnDetailWithApi(){
+        Detail::factory(2)->create();
 
         $response = $this->get(route('apishow'));
         $response->assertStatus(200)->assertJsonCount(2);
     }
-    public function test_CheckIfCanDeleteAnEntryOnOfferWithApi(){
-        $offer = offer::factory(2)->create();
+    public function test_CheckIfCanDeleteAnEntryOnDetailWithApi(){
+        $details = Detail::factory(2)->create();
 
-        $this->delete(route('apidestroy', $offer->first()->id));
+        $this->delete(route('apidestroy', $details->first()->id));
 
-        $this->assertDatabaseCount('offer', 1);
+        $this->assertDatabaseCount('Detail', 1);
 
         $response = $this->get(route('apishow'));
 
         $response->assertStatus(200)->assertJsonCount(1);
 
     }
-    public function test_CheckIfCanCreateAnEntryOnOfferWithApi(){
+    public function test_CheckIfCanCreateAnEntryOnDetailWithApi(){
         $response = $this->post(route('apistore'),[
             'company_name' => 'Test company_name',
             'location' => 'Test location',
@@ -41,7 +41,7 @@ class offerControllerTest extends TestCase
         $response->assertStatus(200)->assertJsonCount(1);
     }
 
-    public function test_checkIfCanUpdateAnEntryOnOfferWithApi(){
+    public function test_checkIfCanUpdateAnEntryOnDetailWithApi(){
         $this->post(route('apistore'),[
             'company_name' => 'Test company_name',
             'location' => 'Test location',
@@ -56,9 +56,9 @@ class offerControllerTest extends TestCase
             ->asserJsonCount(1)
             ->assertJsonFragment($data);
         
-        $offerId = $response->json()[0]['id'];
+        $DetailId = $response->json()[0]['id'];
 
-        $this->put(route('apiupdate', $offerId),[
+        $this->put(route('apiupdate', $DetailId),[
             'company_name' => 'Test company_name Updated',
             'location' => 'Test location Updated',
             'comment' => 'Test comment Updated',
