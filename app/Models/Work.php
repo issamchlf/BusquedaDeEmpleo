@@ -13,4 +13,7 @@ class Work extends Model
         "category",
         "status",
     ];
+    public function details(){
+        return $this->hasMany(Detail::class);
+    }
 }

@@ -16,4 +16,7 @@ class Detail extends Model
     "salary",
     "URL"
     ];
+    public function work(){
+        return $this->belongsto(Work::class);
+    }
 }

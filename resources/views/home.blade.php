@@ -33,6 +33,14 @@
                             </span>
                         </td>
                         <td class="border-b border-gray-200 bg-white px-2 py-1">{{ $work->created_at->format("Y/m/d H:i") }}</td>
+                            <ul>
+                                @forelse ($work->details as $detail)
+                                    <li>{{$detail->id}} - {{ $detail->company_name }} </li>
+                                    
+                                @empty
+                                <li>no</li> 
+                                @endforelse
+                            </ul>
                     </tr>
                 @endforeach
             </tbody>
