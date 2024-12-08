@@ -17,7 +17,7 @@ class DetailFactory extends Factory
     public function definition(): array
     {
         return [
-           'work_id' => $this->faker->unique()->numberBetween(1, 10000), 
+           'work_id' => $this->faker->numberBetween(1, 10000), 
             'company_name' => $this->faker->company, 
             'location' => $this->faker->city, 
             'comment' => $this->faker->sentence(10), 

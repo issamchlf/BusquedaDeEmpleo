@@ -15,16 +15,16 @@ class WorkController extends Controller
     {
         $works = Work::all();
 
-        return response()->json($works, 200);
+        return response()->json(Work::all(), 200);
     }
     
 
     /**
      * Show the form for creating a new resource.
      */
-    /*public function create()
+    public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -47,9 +47,7 @@ class WorkController extends Controller
      */
     public function show(string $id)
     {
-        $works = Work::find($id);
-
-        return response()->json($works, 200);
+        return response()->json(Work::find($id), 200);
     }
 
     /**

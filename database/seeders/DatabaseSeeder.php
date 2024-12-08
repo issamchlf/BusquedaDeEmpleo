@@ -24,22 +24,47 @@ class DatabaseSeeder extends Seeder
             //'name' => 'Test User',
             //'email' => 'test@example.com',
         //]);
-        Work::factory()->create([
+        $work =Work::factory()->create([
             'job_title' => 'Acountant',
             'category' => 'Buisness',
             'status' => 'Requested',
         ]);
-        Work::factory()->create([
+        $work =Work::factory()->create([
             'job_title' => 'Acountant',
             'category' => 'Buisness',
             'status' => 'Requested',
         ]);
-        Work::factory()->create([
+        $work = Work::factory()->create([
             'job_title' => 'Acountant',
             'category' => 'Buisness',
             'status' => 'Requested',
         ]);
-        Work::factory(10)->create();
+        $work =Detail::create([
+            'work_id' => $work->id, 
+            'company_name' => 'Tech Corp',
+            'location' => 'San Francisco',
+            'comment' => 'An exciting opportunity in a dynamic team.',
+            'salary' => 120000,
+            'URL' => 'ddddd.com'
+        ]);
+        $work =Detail::create([
+            'work_id' => $work->id, 
+            'company_name' => 'amazon',
+            'location' => 'malaga',
+            'comment' => 'An exciting opportunity in a dynamic team.',
+            'salary' => 120000,
+            'URL' => 'hola.com'
+        ]);
+        $work =Detail::create([
+            'work_id' => $work->id, 
+            'company_name' => 'mmmm',
+            'location' => 'malaga',
+            'comment' => 'An exciting opportunity in a dynamic team.',
+            'salary' => 120000,
+            'URL' => 'hola.com'
+        ]);
+
+
     }
     
 }

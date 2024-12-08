@@ -17,6 +17,6 @@ class Detail extends Model
     "URL"
     ];
     public function work(){
-        return $this->belongsto(Work::class);
+        return $this->belongsTo(Work::class);
     }
 }

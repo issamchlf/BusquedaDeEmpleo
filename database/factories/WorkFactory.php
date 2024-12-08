@@ -17,9 +17,9 @@ class WorkFactory extends Factory
     public function definition(): array
     {
         return [
-            'job_title' =>$this->faker->realText($maxNbChars = 200),
-            'status' =>$this->faker->realText($maxNbChars = 200),
-            'category' =>$this->faker->realText($maxNbChars = 200)
+            'job_title' =>$this->faker->company,
+            'status' =>$this->faker->sentence(1),
+            'category' =>$this->faker->city
         ];
     }
 }

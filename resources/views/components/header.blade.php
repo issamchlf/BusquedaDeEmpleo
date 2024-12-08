@@ -13,7 +13,6 @@
 
 
         <div class="hidden sm:flex space-x-4">
-            <a href="#" class="hover:text-gray-300 transition"><i >ffff</i>hhhh</a>
             <a href="#" class="hover:text-gray-300 transition"><i class="fab fa-instagram"></i></a>
             <a href="#" class="hover:text-gray-300 transition"><i class="fab fa-linkedin-in"></i></a>
             <a href="#" class="hover:text-gray-300 transition"><i class="fab fa-youtube"></i></a>
