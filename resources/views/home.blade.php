@@ -5,7 +5,7 @@
     <div class="container">
         <div id="search-bar" class="border border-sky-500">
             <form class="flex items-center justify-center p-2">
-                <input type="text" placeholder="Search here"
+                <input type="text" id="input"  placeholder="Search here"
                     class="w-full rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-transparent">
                 <button type="submit"
                     class="bg-blue-500 text-white rounded-md px-4 py-1 ml-2 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50">
@@ -43,9 +43,11 @@
                         <td class="border-b border-gray-200 bg-white px-2 py-1">{{ $work->created_at->format("Y/m/d H:i") }}</td>
                         <td class="border-b border-gray-200 bg-white px-2 py-1">
                             <div class="options">
-                                <a class="option optionsDetails" href="{{ route('show', $work->id) }}">
-                                    <button wire:click="create()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3">Details</button>
-                                    <button wire:click="create()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3">Edit</button>
+                                <a href="{{ route('show', $work->id) }}">
+                                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3">Details</button>
+                                </a>
+                                <a  href="{{ route('show', $work->id) }}" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded my-3">
+                                    Edit
                                 </a>
                             </div>
                         </td>

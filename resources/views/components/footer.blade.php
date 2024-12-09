@@ -6,10 +6,8 @@
                 <span class="logo_name">Contact</span>
             </div>
             <div class="media-icons">
-                <a href="#"><img class="logo" src="{{ asset('img/logo github.png') }}" alt="logo Github"></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="https://github.com/issamchlf"><img class="logo" src="{{ asset('img/logo github.png') }}" alt="logo Github"></a>
+                <a href="https://www.linkedin.com/in/issam-chellaf-1099352bb/"><img class="logo" src="{{ asset('img/logo.png') }}" alt="logo linkdlen"></a>
             </div>
         </div>
         <div class="bottom-details">

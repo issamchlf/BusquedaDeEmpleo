@@ -7,8 +7,7 @@
 
 
         <nav class="hidden md:flex space-x-6">
-            <a href="#" class="hover:text-gray-300 transition">Home</a>
-            <a href="#" class="hover:text-gray-300 transition">Jobs</a>
+            <a href="{{ route('home') }}" class="hover:text-gray-300 transition">Home</a>
         </nav>
 
 
@@ -29,7 +28,6 @@
     <nav class="bg-blue-500 text-white md:hidden">
         <ul class="space-y-2 px-4 py-2">
             <li><a href="#" class="block hover:text-gray-300 transition">Home</a></li>
-            <li><a href="#" class="block hover:text-gray-300 transition">Jobs</a></li>
         </ul>
     </nav>
 </header>
