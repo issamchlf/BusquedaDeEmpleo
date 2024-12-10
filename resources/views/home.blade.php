@@ -4,21 +4,18 @@
 
     <div class="container">
         <div id="search-bar" class="border border-sky-500">
-            <form class="flex items-center justify-center p-2">
-                <label for="statusFilter" class="text-sm font-semibold">Filter By Status:</label>
-                <select id="statusFilter" class="rounded-md border-gray-400 px-3 py-1 focus:outline-none focus:ring-2 focus:ring-blue-600">
+            <form class="flex items-center justify-center p-4 bg-gray-100 rounded-lg shadow-lg">
+                <label for="statusFilter" class="text-sm font-semibold text-gray-700 mr-4">
+                    Filter By Status:
+                </label>
+                <select id="statusFilter" class="rounded-md border border-gray-300 px-4 py-2 text-gray-600 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition">
                     <option value="">All</option>
                     <option value="Active">Active</option>
-                    <option value="Requested">Requested</option>
-                    <option value="Inactive">Inactive</option>
+                    <option value="In progress">In progress</option>
+                    <option value="Closed">Closed</option>
                 </select>
-                <button type="submit"
-                    class="bg-blue-500 text-white rounded-md px-4 py-1 ml-2 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50">
-                    Search
-
-                
-               
             </form>
+            
         </div>
         <table id="table" class="table-auto w-full border-collapse border border-gray-300 text-sm">
             <thead>
@@ -39,7 +36,7 @@
                         <td class="border-b border-gray-200 bg-white px-2 py-1">
                             <span class="rounded-full px-2 py-1 text-xs font-semibold 
                                 {{ $work->status == 'Active' ? 'bg-green-200 text-green-900' : 
-                                   ($work->status == 'Requested' ? 'bg-yellow-200 text-yellow-900' : 'bg-red-200 text-red-900') }}">
+                                   ($work->status == 'In progress' ? 'bg-yellow-200 text-yellow-900' : 'bg-red-200 text-red-900') }}">
                                 {{ $work->status }}
                             </span>
                         </td>
