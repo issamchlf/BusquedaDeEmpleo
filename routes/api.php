@@ -15,3 +15,6 @@ Route::put('/works/{id}', [WorkController::class, 'update'])->name('apiupdate');
 Route::delete('/works/{id}', [WorkController::class, 'destroy'])->name('apidestroy');
 Route::post('/works/{workId}/details', [DetailController::class, 'store'])->name('detailstore');
 
+Route::get('{id}', [DetailController::class, 'index'])->name('api.details.index');
+Route::post('{workId}', [DetailController::class, 'store'])->name('api.details.store');
+Route::get('{workId}/show', [DetailController::class, 'show'])->name('api.details.show');

@@ -19,36 +19,9 @@ class WorkController extends Controller
     }
 
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        return view('works.create');
-    }
-   
 
     /**
-     * Store a newly created resource in storage.
-     */
-    
-     public function store(Request $request)
-    {
-        // Validate the request
-        $validated = $request->validate([
-            'job_title' => 'required|string|max:255',
-            'status' => 'required|string',
-            'category' => 'required|string',
-        ]);
 
-        // Save the work in the database
-        Work::create($validated);
-
-
-        // Redirect to the index page with a success message
-        return redirect()->route('home')->with('success', 'Work created successfully!');
-      
-    }
 
     /**
      * Display the specified resource.
@@ -93,7 +66,5 @@ class WorkController extends Controller
     return redirect()->route('home', $work->id)->with('success', 'Work updated successfully!');
 
 }
-
-
 
 }

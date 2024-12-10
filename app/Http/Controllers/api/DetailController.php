@@ -18,13 +18,6 @@ class DetailController extends Controller
     
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-   /* public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -80,36 +73,10 @@ class DetailController extends Controller
         return response()->json(Work::find($workId), 200);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
+
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $workId,)
-    {
-        $details = Work::find($workId)->details;
-        $details ->update([
-            'work_id' => $request->work_id,
-            'company_name' => $request->company_name,
-            'location' => $request->location,
-            'comment' => $request->comment,
-            'salary' => $request->salary,
-            'URL' => $request->URL,
-        ]);
-        return response()->json($details, 200);
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+   
 }

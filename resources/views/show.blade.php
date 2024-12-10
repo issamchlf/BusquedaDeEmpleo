@@ -3,6 +3,7 @@
 @section('content')
 <div class="overflow-y-auto rounded-lg border p-4">
     <h2 class="font-semibold text-gray-700">Work Details</h2>
+    <h3 class="mt-2 font-semibold text-blue-700">Job Title: {{ $work->job_title }}</h3>
     <ul class="mt-4">
         @if($work->details->isEmpty())
             <p>No details available for this job.</p>
