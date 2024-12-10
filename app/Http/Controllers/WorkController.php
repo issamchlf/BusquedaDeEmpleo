@@ -51,18 +51,36 @@ class WorkController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Work $work)
-    {
-        //
-    }
+    public function edit($id)
+{
+    $work = Work::findOrFail($id);
+    return view('works.edit', compact('work'));
+}
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Work $work)
-    {
-        //
-    }
+    public function update(Request $request, $id)
+{
+    // Validate input
+    $request->validate([
+        'job_title' => 'required|string|max:255',
+        'status' =>'required|string|max:255',
+        'category'=> 'required|string|max:255',
+    ]);
+
+    // Find and update the work
+    $work = Work::findOrFail($id);
+    $work->job_title = $request->job_title;
+    $work->status = $request->status;
+    $work->category = $request->category;
+    $work->save();
+
+    // Redirect to the index or success page
+    return redirect()->route('home', $work->id)->with('success', 'Work updated successfully!');
+
+}
+
 
     /**
      * Remove the specified resource from storage.

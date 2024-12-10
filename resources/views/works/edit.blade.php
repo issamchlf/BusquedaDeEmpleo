@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<form action="{{ route('apiupdate', $work->id) }}" method="POST">
+<form action="{{ route('works.update', $work->id) }}" method="POST">
     @csrf
     @method('PUT')
     <input type="text" name="job_title" value="{{ $work->job_title }}" required>
@@ -11,6 +11,6 @@
         <option value="Requested" {{ $work->status == 'Requested' ? 'selected' : '' }}>Requested</option>
         <option value="Closed" {{ $work->status == 'Closed' ? 'selected' : '' }}>Closed</option>
     </select>
-    <button type="submit">Save</button>
+    <button type="submit" >Save</button>
 </form>
 @endsection
