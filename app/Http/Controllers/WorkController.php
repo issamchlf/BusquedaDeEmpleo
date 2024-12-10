@@ -24,7 +24,7 @@ class WorkController extends Controller
      */
     public function create()
     {
-        //
+        return view('works.create');
     }
    
 
@@ -32,9 +32,20 @@ class WorkController extends Controller
      * Store a newly created resource in storage.
      */
     
-    public function store(Request $request)
+     public function store(Request $request)
     {
-        //
+        // Validate the request
+        $validated = $request->validate([
+            'job_title' => 'required|string|max:255',
+            'status' => 'required|string',
+            'category' => 'required|string',
+        ]);
+
+        // Save the work in the database
+        Work::create($validated);
+
+        // Redirect to the index page with a success message
+        return redirect()->route('home')->with('success', 'Work created successfully!');
     }
 
     /**

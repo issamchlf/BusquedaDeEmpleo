@@ -11,8 +11,8 @@
                     class="bg-blue-500 text-white rounded-md px-4 py-1 ml-2 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50">
                     Search
                 </button>
-                <a href="" ">
-                    <button wire:click="create()" class="bg-blue-500 text-white rounded-md px-4 py-1 ml-2 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50">Create</button>
+                <a href="{{ route('works.create') }}">
+                    <button class="bg-blue-500 text-white rounded-md px-4 py-1 ml-2 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50">Create</button>
                 </a>
                 
                
