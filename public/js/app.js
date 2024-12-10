@@ -1,63 +1,20 @@
-const path = window.location.pathname.split('/').pop();
+document.addEventListener("DOMContentLoaded", function () {
+	const statusFilter = document.getElementById("statusFilter");
+	const rows = document.querySelectorAll(".row");
 
-function showWork()
-{
-	const WorkTitle = document.getElementById("workTitle");
+	// إضافة حدث التصفية عند التغيير
+	statusFilter.addEventListener("change", function () {
+		const filterValue = this.value.toLowerCase(); // الحصول على قيمة التصفية
 
-	if (!workTitle)
-		return ;
-	if (document.querySelectorAll(".status").length === 0)
-	{
-		workTitle.style.display = "none";
-	}
-}
-
-function indexEvents()
-{
-	const input = document.getElementById("input");
-
-	if (!input)
-		return ;
-	input.addEventListener("input", function ()
-	{
-		const filter = this.value.toUpperCase();
-		const table = document.getElementById("table");
-		const rows = table.querySelectorAll(".row");
-		let	  cell, value;
-	
-		for (let i = 0; i < rows.length; i++) 
-		{
-			cell = rows[i].querySelectorAll('.cell')[0];
-			value = cell.textContent || cell.innerText;
-			rows[i].style.display = "none";
-			if (value.toUpperCase().indexOf(filter) > -1)
-			{
-				rows[i].style.display = "";
+		rows.forEach(row => {
+			const statusCell = row.querySelector(".status span").textContent.toLowerCase();
+			
+			// إذا كانت القيمة مُتطابقة أو إذا لم يتم تحديد أي خيار
+			if (filterValue === "" || statusCell.includes(filterValue)) {
+				row.style.display = "";
+			} else {
+				row.style.display = "none";
 			}
-		}
+		});
 	});
-}
-
-function timestampsFormat()
-{
-	const createdAt = document.querySelectorAll("#createdAt");
-	const updatedAt = document.querySelectorAll("#updatedAt");
-
-	createdAt.forEach((span) => span.innerText = span.innerText.split(' ')[0]);
-	updatedAt.forEach((span) => span.innerText = span.innerText.split(' ')[0]);
-}
-
-function setHeaderLinkActive(path)
-{
-	const index = document.getElementById("index");
-
-	if (!path)
-	{
-		index.classList.add("headerLinkActive");
-	}
-}
-
-setHeaderLinkActive(path);
-indexEvents();
-timestampsFormat();
-showWork();
+});

@@ -7,6 +7,7 @@
     <title>@yield('title', 'Mi Aplicacion')</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @vite(['resources/css/app.css'])
+    <script src="{{ asset('public/js/app.js')}}"></script>
 </head>
 <body>
     <x-header></x-header>
@@ -14,6 +15,6 @@
          @yield('content')
     </main>
     <x-footer></x-footer>
-    <script src="{{ asset('js/app.js')}}"></script>
+    <script src="{{ asset('public/js/app.js')}}"></script>
 </body>
 </html>

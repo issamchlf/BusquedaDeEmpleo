@@ -99,7 +99,13 @@ footer .bottom-details a:hover {
 }
 
 
-/*.overflow-y-hidden {
-    overflow-y: auto;
-    max-height: 400px;
+.buttons{
+justify-content: center;
+display: flex;
+gap: 10px;
+margin: auto;
+position: relative;
+top: 200px;
+max-width: 800px;
+
 }

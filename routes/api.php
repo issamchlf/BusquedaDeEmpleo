@@ -7,9 +7,11 @@ use App\Http\Controllers\Api\DetailController;
 
 
 
-Route::get('works', [WorkController::class, 'index'])->name('apiindex');
-Route::get('works/{id}', [WorkController::class, 'show'])->name('apishow');
-Route::post('works', [WorkController::class, 'store'])->name('apistore');
-Route::put('works/{id}', [WorkController::class, 'update'])->name('apiupdate');
-Route::delete('works/{id}', [WorkController::class, 'destroy'])->name('apidestroy');
+
+Route::get('/works', [WorkController::class, 'index'])->name('apihome');
+Route::get('/works/{id}', [WorkController::class, 'show'])->name('apishow');
+Route::post('/works', [WorkController::class, 'store'])->name('apistore');
+Route::put('/works/{id}', [WorkController::class, 'update'])->name('apiupdate');
+Route::delete('/works/{id}', [WorkController::class, 'destroy'])->name('apidestroy');
+Route::post('/works/{workId}/details', [DetailController::class, 'store'])->name('detailstore');
 

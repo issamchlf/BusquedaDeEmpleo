@@ -44,8 +44,10 @@ class WorkController extends Controller
         // Save the work in the database
         Work::create($validated);
 
+
         // Redirect to the index page with a success message
         return redirect()->route('home')->with('success', 'Work created successfully!');
+      
     }
 
     /**
@@ -93,7 +95,5 @@ class WorkController extends Controller
 }
 
 
-    /**
-     * Remove the specified resource from storage.
-     */
+
 }

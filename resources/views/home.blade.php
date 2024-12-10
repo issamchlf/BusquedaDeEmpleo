@@ -5,15 +5,17 @@
     <div class="container">
         <div id="search-bar" class="border border-sky-500">
             <form class="flex items-center justify-center p-2">
-                <input type="text" id="input"  placeholder="Search here"
-                    class="w-full rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-transparent">
+                <label for="statusFilter" class="text-sm font-semibold">Filter By Status:</label>
+                <select id="statusFilter" class="rounded-md border-gray-400 px-3 py-1 focus:outline-none focus:ring-2 focus:ring-blue-600">
+                    <option value="">All</option>
+                    <option value="Active">Active</option>
+                    <option value="Requested">Requested</option>
+                    <option value="Inactive">Inactive</option>
+                </select>
                 <button type="submit"
                     class="bg-blue-500 text-white rounded-md px-4 py-1 ml-2 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50">
                     Search
-                </button>
-                <a href="{{ route('works.create') }}">
-                    <button class="bg-blue-500 text-white rounded-md px-4 py-1 ml-2 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50">Create</button>
-                </a>
+
                 
                
             </form>
@@ -25,6 +27,7 @@
                     <th class="px-2 py-1">Category</th>
                     <th class="px-2 py-1">Status</th>
                     <th class="px-2 py-1">Created At</th>
+                    <th class="px-2 py-1">Updated At</th>
                     <th class="px-2 py-1">Options</th>
                 </tr>
             </thead>
@@ -41,6 +44,7 @@
                             </span>
                         </td>
                         <td class="border-b border-gray-200 bg-white px-2 py-1">{{ $work->created_at->format("Y/m/d H:i") }}</td>
+                        <td class="border-b border-gray-200 bg-white px-2 py-1">{{ $work->updated_at->format("Y/m/d H:i") }}</td>
                         <td class="border-b border-gray-200 bg-white px-2 py-1">
                             <div class="options">
                                 <a href="{{ route('show', $work->id) }}">
