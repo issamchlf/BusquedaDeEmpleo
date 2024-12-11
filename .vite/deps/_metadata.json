@@ -2,14 +2,7 @@
   "hash": "91b367b9",
   "configHash": "2cb00617",
   "lockfileHash": "cd5ef11f",
-  "browserHash": "2b90c9c5",
-  "optimized": {
-    "axios": {
-      "src": "../../node_modules/axios/index.js",
-      "file": "axios.js",
-      "fileHash": "85073666",
-      "needsInterop": false
-    }
-  },
+  "browserHash": "b5428830",
+  "optimized": {},
   "chunks": {}
 }
